@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE jnlp PUBLIC "-//Sun Microsystems, Inc//DTD JNLP Discriptor 1.5//EN" "http://java.sun.com/dtd/JNLP-1.5.dtd">
+<jnlp spec="1.0+" codebase="http://127.0.0.1/" href="RmiProducer.jnlp">
+  <information>
+    <title>Producer</title>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.7+" initial-heap-size="256M" max-heap-size="384M"/>
+    <jar href="lib/java8err-0.0.1-SNAPSHOT.jar"/>
+  </resources>
+  <application-desc main-class="java8err.rmi.RmiProducerMain"/>
+</jnlp>
