@@ -5,9 +5,6 @@ import java.rmi.RemoteException;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-import org.springframework.stereotype.Service;
-
-@Service
 public class ConsumerServiceImp implements IConsumerService {
 
   @Override
