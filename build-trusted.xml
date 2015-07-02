@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="add-7u25-manifest-entries">
+
+	<target name="addTrustedLibraryProperty">
+		<jar file="${jarFile}" update="true">
+			<manifest>
+				<attribute name="Trusted-Library" value="true" />
+				<attribute name="Permissions" value="all-permissions" />
+				<attribute name="Codebase" value="http://*/lib/" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="addTrustedLibraries">
+		<ac:foreach target="addTrustedLibraryProperty" param="jarFile"
+			xmlns:ac="antlib:net.sf.antcontrib">
+			<path>
+				<fileset dir="${server.dir}/lib" includes="**/*.jar" />
+			</path>
+		</ac:foreach>
+	</target>
+</project>
