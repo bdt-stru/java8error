@@ -1,0 +1,6 @@
+*.keystore
+target/
+.settings/
+.classpath
+.project
+build-trusted.xml
