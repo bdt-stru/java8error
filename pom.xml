@@ -174,10 +174,10 @@
 					<storepass>somepassstore</storepass>
 					<keypass>somepasskey</keypass>
 					<removeExistingSignatures>true</removeExistingSignatures>
-<!-- 					<arguments> -->
-<!-- 						<argument>-tsa</argument> -->
-<!-- 						<argument>http://tsa.example.com/</argument> -->
-<!-- 					</arguments> -->
+					<!-- <arguments> -->
+					<!-- <argument>-tsa</argument> -->
+					<!-- <argument>http://tsa.example.com/</argument> -->
+					<!-- </arguments> -->
 				</configuration>
 			</plugin>
 		</plugins>
@@ -188,26 +188,25 @@
 			<artifactId>jetty-all</artifactId>
 			<version>8.1.16.v20140903</version>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 		<groupId>javax.jnlp</groupId> -->
-<!-- 		<artifactId>jnlp-api</artifactId> -->
-<!-- 		<version>version_same_as_jre</version> -->
-<!-- 		<scope>system</scope> -->
-<!-- 		<systemPath>${java.home}/lib/javaws.jar</systemPath> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 		<groupId>com.oracle.deploy.update</groupId> -->
-<!-- 		<artifactId>deploy-api</artifactId> -->
-<!-- 		<version>version_same_as_jre</version> -->
-<!-- 		<scope>system</scope> -->
-<!-- 		<systemPath>${java.home}/lib/deploy.jar</systemPath> -->
-<!-- 		</dependency> -->
-			
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
+			<!-- includes jdflib -->
+			<groupId>org.cip4.lib.ptk</groupId>
+			<artifactId>PrintTalkJ</artifactId>
+			<version>2.1.4a.76</version>
 		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>javax.jnlp</groupId> -->
+		<!-- <artifactId>jnlp-api</artifactId> -->
+		<!-- <version>version_same_as_jre</version> -->
+		<!-- <scope>system</scope> -->
+		<!-- <systemPath>${java.home}/lib/javaws.jar</systemPath> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.oracle.deploy.update</groupId> -->
+		<!-- <artifactId>deploy-api</artifactId> -->
+		<!-- <version>version_same_as_jre</version> -->
+		<!-- <scope>system</scope> -->
+		<!-- <systemPath>${java.home}/lib/deploy.jar</systemPath> -->
+		<!-- </dependency> -->
 	</dependencies>
 </project>
