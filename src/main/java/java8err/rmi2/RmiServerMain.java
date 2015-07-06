@@ -14,11 +14,14 @@ public class RmiServerMain {
     Common.deactivateSecurityManager();
 
     try {
+      LocateRegistry.createRegistry(1099);
+
       Registry registry = LocateRegistry.getRegistry("127.0.0.1", 1099);
 
       ServerServiceImp obj = new ServerServiceImp();
-      IServerService serverService = (IServerService) UnicastRemoteObject.exportObject(obj, 1102);
+      IServerService serverService = (IServerService) UnicastRemoteObject.exportObject(obj, 1101);
       registry.bind("ServerService", serverService);
+
     } catch (Exception e) {
       e.printStackTrace();
     }

@@ -9,6 +9,7 @@
   <resources>
     <j2se version="1.7+" initial-heap-size="256M" max-heap-size="384M"/>
     <jar href="lib/java8err-0.0.1-SNAPSHOT.jar"/>
+    <jar href="lib/JDFLibJ-2.1.4a.76.jar"/>
   </resources>
   <application-desc main-class="java8err.rmi2.RmiServerMain"/>
 </jnlp>

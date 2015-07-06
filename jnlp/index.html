@@ -79,13 +79,12 @@ java.lang.NullPointerException
 
 		<li><h1>exception 3)</h1>
 			<ol>
-				<li><a href="RmiProvider.jnlp">RmiProvider</a></li>
 				<li><a href="RmiServer.jnlp">RmiServer</a></li>
 				<li><a href="RmiClient.jnlp">RmiClient</a></li>
 			</ol></li>
-		<p>RmiServer has a reset SecurityManager and when it calls RmiProvider additional
-		jars are loaded but probably due to call to 
-		com.sun.deploy.uitoolkit.ToolkitStore.get().getAppContext() it fails.</p>
+		<p>RmiServer has a reset SecurityManager and when it is called by RmiClient additional
+		jars for the RmiServer are loaded inside a rmi-thread inside RmiServer. but probably due to 
+		the call to com.sun.deploy.uitoolkit.ToolkitStore.get().getAppContext() it fails.</p>
 <p><pre>
 java.lang.NullPointerException
 	at com.sun.jnlp.JNLPClassLoader.getPermissions(Unknown Source)
@@ -100,7 +99,7 @@ java.lang.NullPointerException
 	at com.sun.jnlp.JNLPClassLoader.findClass(Unknown Source)
 	at java.lang.ClassLoader.loadClass(Unknown Source)
 	at java.lang.ClassLoader.loadClass(Unknown Source)
-	at java8err.rmi2.ProviderServiceImp.getSomething(ProviderServiceImp.java:12)
+	at java8err.rmi2.ServerServiceImp.getSomething(ServerServiceImp.java:12)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -113,7 +112,7 @@ java.lang.NullPointerException
 	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
 	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
 	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$254(Unknown Source)
-	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$11/328299547.run(Unknown Source)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$11/528419703.run(Unknown Source)
 	at java.security.AccessController.doPrivileged(Native Method)
 	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
@@ -124,25 +123,16 @@ java.lang.NullPointerException
 	at sun.rmi.server.UnicastRef.invoke(Unknown Source)
 	at java.rmi.server.RemoteObjectInvocationHandler.invokeRemoteMethod(Unknown Source)
 	at java.rmi.server.RemoteObjectInvocationHandler.invoke(Unknown Source)
-	at com.sun.proxy.$Proxy1.getSomething(Unknown Source)
-	at java8err.rmi2.ServerServiceImp.getSomethingServed(ServerServiceImp.java:16)
+	at com.sun.proxy.$Proxy0.getSomething(Unknown Source)
+	at java8err.rmi2.RmiClientMain.main(RmiClientMain.java:19)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
-	at sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
-	at sun.rmi.transport.Transport$1.run(Unknown Source)
-	at sun.rmi.transport.Transport$1.run(Unknown Source)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at sun.rmi.transport.Transport.serviceCall(Unknown Source)
-	at sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
-	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
-	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$254(Unknown Source)
-	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$10/2078555818.run(Unknown Source)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at com.sun.javaws.Launcher.executeApplication(Unknown Source)
+	at com.sun.javaws.Launcher.executeMainClass(Unknown Source)
+	at com.sun.javaws.Launcher.doLaunchApp(Unknown Source)
+	at com.sun.javaws.Launcher.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
 </pre></p>
 	</ul>
