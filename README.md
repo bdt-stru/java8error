@@ -37,7 +37,7 @@ java.lang.NullPointerException
 
 run create_keystore.bat to generate a keystore for signing. answer all questions with: y
 
-run: mvn clean install
+run: mvn clean verify
 
 run: target\staging\server\bin\run_webserver.bat
 

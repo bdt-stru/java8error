@@ -59,7 +59,7 @@
 
 					<!-- copy resources to target/staging/prof -->
 					<execution>
-						<id>copy-resources</id>
+						<id>resources</id>
 						<phase>package</phase>
 						<goals>
 							<goal>copy-resources</goal>
@@ -90,7 +90,7 @@
 				<version>2.8</version>
 				<executions>
 					<execution>
-						<id>ext libs</id>
+						<id>dependencies</id>
 						<phase>package</phase>
 						<goals>
 							<goal>copy-dependencies</goal>
@@ -113,8 +113,8 @@
 				<version>1.8</version>
 				<executions>
 					<execution>
-						<id>add-trusted-library-attribute</id>
-						<phase>install</phase>
+						<id>add-trusted-library-attributes</id>
+						<phase>verify</phase>
 						<configuration>
 							<target>
 								<ant antfile="${basedir}/build-trusted.xml">
@@ -154,8 +154,8 @@
 				<version>1.3.2</version>
 				<executions>
 					<execution>
-						<id>sign</id>
-						<phase>install</phase>
+						<id>sign-jars</id>
+						<phase>verify</phase>
 						<goals>
 							<goal>sign</goal>
 						</goals>
