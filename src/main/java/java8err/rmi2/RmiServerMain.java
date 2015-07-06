@@ -3,8 +3,9 @@ package java8err.rmi2;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-
 import java8err.rmi.Common;
+
+import javax.swing.JOptionPane;
 
 public class RmiServerMain {
 
@@ -18,11 +19,12 @@ public class RmiServerMain {
       ServerServiceImp obj = new ServerServiceImp();
       IServerService serverService = (IServerService) UnicastRemoteObject.exportObject(obj, 1102);
       registry.bind("ServerService", serverService);
-
     } catch (Exception e) {
       e.printStackTrace();
     }
 
+    JOptionPane.showMessageDialog(null, "click OK to quit " + RmiServerMain.class.getSimpleName());
+    System.exit(0);
   }
 
 }

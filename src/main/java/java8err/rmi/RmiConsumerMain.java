@@ -4,6 +4,8 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
+import javax.swing.JOptionPane;
+
 public class RmiConsumerMain {
 
   public static void main(String args[]) {
@@ -23,6 +25,8 @@ public class RmiConsumerMain {
       e.printStackTrace();
     }
 
+    JOptionPane.showMessageDialog(null, "click OK to quit " + RmiConsumerMain.class.getSimpleName());
+    System.exit(0);
   }
 
 }

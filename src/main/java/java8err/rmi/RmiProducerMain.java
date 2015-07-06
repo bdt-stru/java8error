@@ -3,6 +3,8 @@ package java8err.rmi;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+import javax.swing.JOptionPane;
+
 public class RmiProducerMain {
 
   public static void main(String[] args) {
@@ -18,5 +20,8 @@ public class RmiProducerMain {
     } catch (Exception e) {
       e.printStackTrace();
     }
+
+    JOptionPane.showMessageDialog(null, "click OK to quit " + RmiProducerMain.class.getSimpleName());
+    System.exit(0);
   }
 }

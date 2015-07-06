@@ -4,6 +4,8 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java8err.rmi.Common;
 
+import javax.swing.JOptionPane;
+
 public class RmiClientMain {
 
   public static void main(String[] args) {
@@ -19,5 +21,8 @@ public class RmiClientMain {
     } catch (Exception e) {
       e.printStackTrace();
     }
+
+    JOptionPane.showMessageDialog(null, "click OK to quit " + RmiClientMain.class.getSimpleName());
+    System.exit(0);
   }
 }

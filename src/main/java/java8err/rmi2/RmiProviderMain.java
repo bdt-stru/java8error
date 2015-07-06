@@ -3,8 +3,9 @@ package java8err.rmi2;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-
 import java8err.rmi.Common;
+
+import javax.swing.JOptionPane;
 
 public class RmiProviderMain {
 
@@ -25,6 +26,8 @@ public class RmiProviderMain {
       e.printStackTrace();
     }
 
+    JOptionPane.showMessageDialog(null, "click OK to quit " + RmiProviderMain.class.getSimpleName());
+    System.exit(0);
   }
 
 }
