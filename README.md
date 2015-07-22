@@ -45,7 +45,6 @@ go with webbrowser to: http://127.0.0.1:80/
 
 activate java console
 
-start Rmi Applications in the order they are listed on the website or <a href="jnlp/index.html">jnlp/index.html</a>
+start Rmi Applications in the order they are listed on the website ( <a href="jnlp/index.html">jnlp/index.html</a> )
 
-look at the RmiConsumer or RmiServer java console for the exceptions
 

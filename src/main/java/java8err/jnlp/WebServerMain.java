@@ -39,7 +39,6 @@ public class WebServerMain {
       server.start();
 
       System.out.println("web-server ready at " + "http://" + hostname);
-      System.out.println("start first 1 consumer then 1 producer.");
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
