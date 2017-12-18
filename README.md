@@ -1,3 +1,10 @@
+
+https://bugs.java.com/view_bug.do?bug_id=8135232
+
+Oracle's Resolution: Won't Fix
+
+workaround: create custom security manager (implement nothing to allow everything)
+
 # java8error
 
 shows how to cause 3 exceptions:
